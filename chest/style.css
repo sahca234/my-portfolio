@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #4a0000, #8b0000);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(139, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(100, 0, 0, 0.5);
+  max-width: 600px;
+  width: 90%;
+}
+
+h1 {
+  color: #ff6b6b;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 0 #8b0000;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+p {
+  color: #ffd7d7;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.chests {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.chest {
+  width: 120px;
+  height: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid #b22222;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: #8b0000;
+  box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+}
+
+.chest:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(255, 107, 107, 0.4);
+  border-color: #ff6b6b;
+}
+
+.chest img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.chest:hover img {
+  transform: scale(1.05);
+}
+
+#result {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-height: 3rem;
+  color: #ffcccc;
+  text-shadow: 2px 2px 0 #8b0000;
+}
+
+button {
+  background: linear-gradient(to right, #b22222, #8b0000);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(to right, #8b0000, #b22222);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(139, 0, 0, 0.6);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Анимации */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff6b6b, 0 0 20px #ff6b6b;
+  }
+  to {
+    text-shadow: 0 0 20px #ff6b6b, 0 0 30px #ff6b6b, 0 0 40px #ff6b6b;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.success {
+  color: #98fb98;
+  font-size: 1.8rem;
+}
+
+.fail {
+  color: #ffa0a0;
+  font-size: 1.4rem;
+}
